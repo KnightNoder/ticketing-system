@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: harmonia-reg;
+  src: url(../fonts/HarmoniaSansProCyr-Regular.ttf);
+}
+
+
+@font-face {
+  font-family: harmonia-bold;
+  src: url(../fonts/HarmoniaSansProCyr-Bold.ttf);
+}
+
+html {
+  --grey-border: #F6F6F6;
+  --carot: #FE8276
+}
+
+body {
+}
+
+.main-container {
+  background: #F6F6F6;
+  padding-top: 1%;
+  height: 110vh;
+  margin-top: 5%;
+  display: flex;
+}
+
+.track-order-container {
+  flex: 4
+}
+
+.menu-container{
+  flex:1
+}

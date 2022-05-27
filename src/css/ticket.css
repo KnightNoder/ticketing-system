@@ -1,0 +1,165 @@
+.track-order-container {
+    background: #ffffff;
+    border-radius: 3%;
+    margin: 3% 20% 3% 1%;
+    overflow: auto;
+}
+
+.menu-container{
+    background: #ffffff;
+    border-radius: 3%;
+    margin: 3% 2% 3% 5%;
+    padding: 5% 11% 10% 5%;
+    overflow: auto;
+}
+
+.header-img {
+    margin-left: 5%;
+    display: inline-block;
+    /* height: 15px; */
+    /* width: 15px; */
+}
+
+.header{
+    display: inline-block;
+    margin-left: 2%;
+    font-size: 18px;
+}
+
+.track-order-container .heading-container {
+    font-weight: 600;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid #E5E5E5;
+    padding-bottom: 2%;
+}
+
+.track-order-container .ticket-header {
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.dropdown-flex {
+    display: flex;
+    margin: 4% 5% 0 5%;
+}
+
+.issue,.sub-issue {
+    flex:1;
+    width: 100%;
+}
+
+.sub-issue{
+    margin-left: 5%;
+}
+
+textarea {
+    resize: none;
+}
+
+.input-description {
+    margin: 3% 5% 0 5%;
+}
+
+textarea::placeholder {
+    font-family: harmonia-reg;
+}
+
+textarea {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.id-phone-container {
+    display: flex;
+    margin: 3% 5% 0 5%;
+}
+
+.phone-container,.id-container {
+    flex:1
+}
+
+.ticket-input {
+    background: #F6F6F6;
+    border: none;
+    width: 95%;
+    height: 50px;
+    margin-top: 5%;
+    margin-right: 5%;
+    padding-left: 5%;
+    border-radius: 4px;
+}
+
+.id-input {
+    margin-left: 5%;
+}
+
+.phone-header {
+    margin-left: 5%;
+}
+
+.picture-upload-header {
+    margin-left: 5%;
+    margin-top: 6%;
+}
+
+.upload-pictures {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+.submit-button-div {
+    margin-right: 5%;
+    position: relative;   
+    margin-bottom: 5%; 
+}
+
+.submit-button {
+    position: absolute;
+    right: 0;
+    background: #FE8276;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    padding: 2% 7%;
+}
+
+.popup {
+    height: 250px;
+    width: 100%;
+    padding: 0 8%;
+}
+
+.react-responsive-modal-modal {
+    display: flex;
+    border-radius: 16px;
+    background: #FFFFFF;
+}
+
+.ticket-created-header {
+    margin-top: 3%;
+    font-family: harmonia-bold;
+}
+
+.ticket-created-subtext {
+    margin-top: 4%;
+    color: #777777;
+}
+
+.ticket-created-button-div {
+    margin-top: 5%;
+}
+
+.popup-submit-button {
+    color: white;
+    background: #FE8276;
+    border: 1px solid #FE8276;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    width: 90%;
+    height: 40px;
+    font-family: harmonia-reg;
+    font-size: 18px;
+}
