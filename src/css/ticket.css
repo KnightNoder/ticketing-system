@@ -1,7 +1,7 @@
 .track-order-container {
     background: #ffffff;
     border-radius: 3%;
-    margin: 3% 20% 3% 1%;
+    margin: 3% 18% 3% 1%;
     overflow: auto;
 }
 
@@ -9,8 +9,17 @@
     background: #ffffff;
     border-radius: 3%;
     margin: 3% 2% 3% 5%;
-    padding: 5% 11% 10% 5%;
+    padding: 2% 11% 10% 3%;
     overflow: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
+}
+
+.menu-header {
+    font-size: 25px;
+    margin-bottom: 20%;
+    margin-left: 8%;
 }
 
 .header-img {
@@ -113,7 +122,8 @@ textarea {
 .submit-button-div {
     margin-right: 5%;
     position: relative;   
-    margin-bottom: 5%; 
+    /* margin-bottom: 5%;  */
+    margin-bottom: 10%;
 }
 
 .submit-button {
@@ -152,6 +162,10 @@ textarea {
     margin-top: 5%;
 }
 
+.ticket-created-header,.ticket-created-subtext,.ticket-created-button-div,.ticket-created-img  {
+    text-align: center;
+}
+
 .popup-submit-button {
     color: white;
     background: #FE8276;
@@ -162,4 +176,80 @@ textarea {
     height: 40px;
     font-family: harmonia-reg;
     font-size: 18px;
+}
+
+.track-order-container {
+    flex: 4
+}
+
+.menu-container{
+    flex:1
+}
+
+.menu-item {
+    display: flex;
+    margin: 20% 0;
+}
+
+.icon-image{
+    height: 20px;
+    width: 20px;
+    margin-top: 9%;
+}
+
+.icon-div {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.menu-item-text {
+    color: #777777;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.issue-description-ticket {
+    margin: 3% 5% 0 5%;
+}
+
+@media only screen and (max-width:  480px) {
+    .dropdown-flex {
+        flex-direction: column;
+    }
+
+    .sub-issue{
+        margin-left: 0%;
+    }
+
+    textarea {
+        width: 90%;
+        background: #F6F6F6;
+        border-radius: 4px;
+        border: none
+    }
+
+    .track-order-container {
+        margin: 3% 5% 3% 5%;
+    }
+
+    .id-input,.phone-header {
+      margin-left: 0%;
+    }
+
+    .phone-container {
+        margin-top: 5%;
+    }
+    .id-phone-container {
+        flex-direction: column;
+    }
+
+    .sub-issue {
+        margin-top: 5%;
+    }
+
+    .submit-button-div {
+        margin-top: 5%;
+    }
 }

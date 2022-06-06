@@ -1,0 +1,94 @@
+.ticket-list-container {
+    background: #ffffff;
+    border-radius: 3%;
+    margin: 3% 20% 3% 0%;
+    overflow: auto;
+}
+
+.tickets-container {
+    margin-top: 5%;
+    flex: 4;
+}
+
+.tickets-container .heading {
+    font-family: harmonia-bold;
+    font-size: 20px;
+}
+
+.tickets-heading {
+    margin: 0 5% 3% 5%;
+    color: #777777;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.ticket-cards-container {
+    margin: 5% 0% 3% 0%;
+}
+
+.ticket-header {
+    display: flex;
+    margin: 3% 5% 0 5%;
+}
+
+.description {
+    margin: 2% 5% 3% 5%;
+} 
+
+.ticket-status {
+    margin: 2% 5% 0 5%;
+}
+
+.ticket-card {
+    border-top: 0.5px solid #E5E5E5;
+    cursor: pointer;
+    padding-bottom: 3%;
+}
+
+.ticket-card:hover {
+    background: #FFF3F2;
+}
+.menu-container{
+    flex:1
+}
+
+.issue {
+    font-family: harmonia-bold;
+}
+
+.description {
+    color: #777777
+}
+
+.ticket-status-button {
+    padding: 1% 5%;
+    border: 1px solid #06C686;
+    border-radius: 4px;
+    color: white;
+    font-family: harmonia-bold;
+}
+
+.open-button, .reopen-button {
+    background: #06C686;
+}
+
+.close-button {
+    background: #FFBC16;
+    border: 1px solid #FFBC16;
+    border-radius: 4px;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .menu-container {
+        display: none;
+    }
+
+    .tickets-container {
+        margin: 0 5%;
+    }
+
+    .ticket-list-container {
+        margin-right: 5%;
+    }
+}
