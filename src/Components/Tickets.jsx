@@ -2,14 +2,51 @@ import React from 'react';
 import '../css/view-tickets.css';
 import '../css/ticket.css';
 import { useNavigate } from 'react-router-dom';
+import {useEffect,useState} from 'react';
+const axios = require('axios');
+
 
 const Tickets = () => {
 
   const navigate = useNavigate();
+  const [tickets_open,Set_tickets_open] = useState([]);
+  const [tickets_closed,Set_tickets_closed] = useState([]);
 
   const changeDivColor = () => {
       alert('hello')
   }
+
+  useEffect(() => {
+    const ticketsList = async() => {
+        const config = {
+            method: 'post',
+            url: 'http://staging-01.ap-south-1.elasticbeanstalk.com/api/supportTicket/getAllTickets',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            data: {
+                userId:'Lava'
+            }
+        }
+        await axios(config).
+        then((response)=>{
+            console.log( (response.data.data),'resp data')
+            const open_tickets_list = response.data.data.filter((x) =>{
+                return x.status_open == true
+            })
+            Set_tickets_open(open_tickets_list)
+            const closed_tickets_list  = response.data.data.filter((x) =>{
+               return x.status_closed == true
+            })
+            Set_tickets_closed(closed_tickets_list)
+        }).catch((error)=>{
+            console.log(error,'err')
+        })
+
+    }
+    ticketsList();
+  },[])
+
   return (
       <>
         <div className='menu-container'>
@@ -92,14 +129,17 @@ const Tickets = () => {
                     <div className='tickets-heading'>
                         Active tickets
                     </div>
-                    <div className='ticket-card' onClick={() => navigate('/ticket')}>
+                    {/* <div className='ticket-card' onClick={() => navigate('/ticket')}>
                         <div className='ticket-header'>
                             <div className='issue'>
-                                No prescription to my order
+                                Ticket ID: #23345666
                             </div>
                             <div className='time'>
                                 3 hours ago
                             </div>
+                        </div>
+                        <div className='header'>
+                            No prescription to my order
                         </div>
                         <div className='description'>
                             Lorem Ipsum is simply dummy text of the printing and 
@@ -107,18 +147,21 @@ const Tickets = () => {
                         </div>
                         <div className='ticket-status'>
                             <button className='ticket-status-button open-button'>
-                                OPEN
+                                NEW
                             </button>
                         </div>
-                    </div>
-                    <div className='ticket-card'>
+                    </div> */}
+                    {/* <div className='ticket-card'>
                         <div className='ticket-header'>
                             <div className='issue'>
-                                No prescription to my order
+                                Ticket ID: #23345666
                             </div>
                             <div className='time'>
                                 3 hours ago
                             </div>
+                        </div>
+                        <div className='header'>
+                            No prescription to my order
                         </div>
                         <div className='description'>
                             Lorem Ipsum is simply dummy text of the printing and 
@@ -129,7 +172,33 @@ const Tickets = () => {
                                 REOPENED
                             </button>
                         </div>
-                    </div>
+                    </div> */}
+                    { tickets_open.map((x) => {
+                        return (
+
+                            <div className='ticket-card' key={x._id} onClick={() => navigate(`/ticket/${x._id}`)}>
+                            <div className='ticket-header'>
+                                <div className='issue'>
+                                    Ticket ID: {x._id}
+                                </div>
+                                <div className='time'>
+                                    3 hours ago
+                                </div>
+                            </div>
+                            <div className='header'>
+                                No prescription to my order
+                            </div>
+                            <div className='description'>
+                                {x.description}
+                            </div>
+                            <div className='ticket-status'>
+                                <button className='ticket-status-button reopen-button'>
+                                    OPEN
+                                </button>
+                            </div>
+                        </div>
+                        )
+                    })}
                 </div>
             </div>
             <div className='ticket-list-container'>
@@ -137,14 +206,17 @@ const Tickets = () => {
                     <div className='tickets-heading'>
                         All tickets
                     </div>
-                    <div className='ticket-card'>
+                    {/* <div className='ticket-card'>
                         <div className='ticket-header'>
                             <div className='issue'>
-                                No prescription to my order
+                                Ticket ID: #23345666
                             </div>
                             <div className='time'>
                                 3 hours ago
                             </div>
+                        </div>
+                        <div className='header'>
+                            No prescription to my order
                         </div>
                         <div className='description'>
                             Lorem Ipsum is simply dummy text of the printing and 
@@ -159,11 +231,14 @@ const Tickets = () => {
                     <div className='ticket-card'>
                         <div className='ticket-header'>
                             <div className='issue'>
-                                No prescription to my order
+                                Ticket ID: #23345666
                             </div>
                             <div className='time'>
                                 3 hours ago
                             </div>
+                        </div>
+                        <div className='header'>
+                            No prescription to my order
                         </div>
                         <div className='description'>
                             Lorem Ipsum is simply dummy text of the printing and 
@@ -174,7 +249,33 @@ const Tickets = () => {
                                 CLOSE
                             </button>
                         </div>
-                    </div>
+                    </div> */}
+                    { tickets_closed.map((x) => {
+                        return (
+
+                            <div className='ticket-card' key={x._id} onClick={() => navigate(`/ticket/${x._id}`)}>
+                            <div className='ticket-header'>
+                                <div className='issue'>
+                                    Ticket ID: {x._id}
+                                </div>
+                                <div className='time'>
+                                    3 hours ago
+                                </div>
+                            </div>
+                            <div className='header'>
+                                No prescription to my order
+                            </div>
+                            <div className='description'>
+                                {x.description}
+                            </div>
+                            <div className='ticket-status'>
+                                <button className='ticket-status-button reopen-button'>
+                                    CLOSED
+                                </button>
+                            </div>
+                        </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>

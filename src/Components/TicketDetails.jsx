@@ -84,7 +84,41 @@ const Tickets = () => {
             <div className='ticket-list-container'>
                 <div className='ticket-cards-container'>
                     <div className='tickets-heading'>
-                        Issue Type
+                        Ticket ID: #23345666
+                    </div>
+                    <div className='status-section'>
+                        <div className='status-header-part'>
+                            <div className='ststus-heading'>
+                                Created:
+                            </div>
+                            <div className='status-content'>
+                                Mar 17, 2022
+                            </div>
+                        </div>
+                        <div className='status-header-part'>
+                            <div className='ststus-heading'>
+                                Created:
+                            </div>
+                            <div className='status-content'>
+                                Mar 17, 2022
+                            </div>
+                        </div>
+                        <div className='status-header-part'>
+                            <div className='ststus-heading'>
+                                Created:
+                            </div>
+                            <div className='status-content'>
+                                Mar 17, 2022
+                            </div>
+                        </div>
+                        <div className='status-header-part'>
+                            <div className='ststus-heading'>
+                                Created:
+                            </div>
+                            <div className='status-content'>
+                                Mar 17, 2022
+                            </div>
+                        </div>
                     </div>
                     <div className='ticket-card-detail'>
                         <div className='ticket-header'>

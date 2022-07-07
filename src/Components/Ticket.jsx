@@ -27,6 +27,10 @@ const Ticket = () => {
 
   }
 
+  const submitTicket = () => {
+
+  }
+
   return (
     <>
       <div className='menu-container'>
@@ -203,15 +207,17 @@ const Ticket = () => {
             Upload pictures of the product
           </div>
           <div className='upload-pictures'>
-              <div className='image-1'>
-                  Pic1
+              <div className='image-1' onClick={() => document.getElementById('img_1').click()}>
+                  <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/img_capture.png?v=1655802347" alt="" srcset="" />
+                  <input type="file" name="img_1" id="img_1"  style={{display:"none"}}/>
               </div>
-              <div className='image-2'>
-                  Pic2
+              <div className='image-2' onClick={() => document.getElementById('img_2').click()} >
+                  <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/img_capture.png?v=1655802347" alt="" srcset="" />
+                  <input type="file" name="img_2" id="img_2" style={{display:"none"}}/>
               </div>
           </div>
           <div className='submit-button-div'>
-              <button className='submit-button' onClick={() => Set_modal_open(true)}>
+              <button className='submit-button' onClick={() => {submitTicket(); Set_modal_open(true)}}>
                   Submit
               </button>
           </div>
@@ -228,7 +234,7 @@ const Ticket = () => {
                   A support executive will be assigned to help you shortly.
                 </div>
                 <div className='ticket-created-button-div'>
-                    <button className='popup-submit-button' onClick={() => navigate('/view-tickets')}>
+                    <button className='popup-submit-button' onClick={() => {navigate('/view-tickets')}}>
                       View my tickets
                     </button>
                 </div>
