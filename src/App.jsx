@@ -6,7 +6,7 @@ import TicketDetails from './Components/TicketDetails';
 import './css/App.css'
 const App = () => {
   return (
-    <BrowserRouter basename="pages/ticketing">
+    <BrowserRouter basename="pages/support-ticket">
         <div className="main-container">
             <Routes>
                 <Route path="/create-ticket" element={<CreateTicket/>}/>
