@@ -5,6 +5,8 @@ import ViewTickets from './Components/Tickets'
 import TicketDetails from './Components/TicketDetails';
 import './css/App.css'
 const App = () => {
+  const customer = document.getElementById('shopify-customer-id').value
+  console.log(customer,'customer id');
   return (
     <BrowserRouter basename="pages/support-ticket">
         <div className="main-container">
